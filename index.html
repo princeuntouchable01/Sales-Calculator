@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>Sales Calculator</h1>
+                <p>Calculate. Record. Sell smarter.</p>
+            </div>
+
+            <div class="status-dot"></div>
+        </header>
+
+
+        <!-- Display -->
+        <section class="display">
+            <div id="expression">0</div>
+            <div id="result">0</div>
+        </section>
+
+
+        <!-- Modes -->
+        <nav class="modes">
+
+            <button class="mode active" data-mode="calculator">
+                Calculator
+            </button>
+
+            <button class="mode" data-mode="equation">
+                Equation
+            </button>
+
+            <button class="mode" data-mode="sales">
+                Sales
+            </button>
+
+        </nav>
+
+
+        <!-- Calculator -->
+        <section id="calculatorMode" class="mode-section">
+
+            <div class="calculator">
+
+                <button class="action">C</button>
+                <button class="action">⌫</button>
+                <button class="action">%</button>
+                <button class="operator">÷</button>
+
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">×</button>
+
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">−</button>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator">+</button>
+
+                <button class="zero">0</button>
+                <button>.</button>
+                <button class="equals">=</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Equation -->
+        <section id="equationMode" class="mode-section hidden">
+
+            <div class="section-title">
+                <h2>Equation Solver</h2>
+                <p>Solve simple equations for X.</p>
+            </div>
+
+            <input
+                type="text"
+                id="equationInput"
+                placeholder="Example: 2x + 5 = 17"
+            >
+
+            <button id="solveButton" class="primary-button">
+                Solve for X
+            </button>
+
+            <div class="answer-box">
+                <span>Answer</span>
+                <strong id="equationAnswer">—</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Sales -->
+        <section id="salesMode" class="mode-section hidden">
+
+            <div class="section-title">
+                <h2>Sales Record</h2>
+                <p>Add products and calculate the transaction.</p>
+            </div>
+
+            <div id="products"></div>
+
+            <button id="addProduct" class="secondary-button">
+                + Add Product
+            </button>
+
+            <div class="sales-summary">
+
+    <div>
+        <span>Total Items</span>
+        <strong id="totalItems">0</strong>
+    </div>
+
+    <div>
+        <span>Revenue</span>
+        <strong id="revenue">₦0</strong>
+    </div>
+
+    <div>
+        <span>Profit</span>
+        <strong id="profit">₦0</strong>
+    </div>
+
+</div>
+            <button id="saveSale" class="primary-button">
+                Save Sale
+            </button>
+            
+            <button id="historyButton" class="secondary-button">
+    📋 Sales History
+</button>
+
+<div id="salesHistory" class="sales-history hidden">
+    <div class="section-title">
+        <h2>Sales History</h2>
+        <p>Your saved transactions.</p>
+    </div>
+
+    <div id="historyList"></div>
+</div>
+            
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

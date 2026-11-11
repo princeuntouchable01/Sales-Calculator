@@ -1,0 +1,512 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #050505;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* APP */
+
+.app {
+    width: min(360px, 100%);
+    min-height: 720px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #2a2a2a;
+    border-radius: 28px;
+
+    padding: 18px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.header h1 {
+    font-size: 22px;
+}
+
+.header p {
+    margin-top: 4px;
+
+    font-size: 12px;
+    color: #999;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #d4af37;
+
+    border-radius: 50%;
+}
+
+
+/* DISPLAY */
+
+.display {
+    background: #070707;
+
+    border: 1px solid #242424;
+    border-radius: 18px;
+
+    min-height: 115px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    text-align: right;
+
+    margin-bottom: 14px;
+}
+
+#expression {
+    color: #777;
+    font-size: 14px;
+
+    min-height: 20px;
+}
+
+#result {
+    font-size: 38px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* MODES */
+
+.modes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+}
+
+.mode {
+    border: none;
+
+    background: #151515;
+    color: #888;
+
+    border-radius: 10px;
+
+    padding: 11px 5px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.mode.active {
+    background: #d4af37;
+    color: #050505;
+}
+
+
+/* CALCULATOR */
+
+.calculator {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 9px;
+}
+
+.calculator button {
+    height: 58px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #171717;
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.calculator button:active {
+    transform: scale(0.96);
+}
+
+.calculator .action {
+    color: #d4af37;
+}
+
+.calculator .operator {
+    background: #1d1d1d;
+    color: #d4af37;
+}
+
+.calculator .equals {
+    background: #d4af37;
+    color: #050505;
+}
+
+.calculator .zero {
+    grid-column: span 2;
+}
+
+
+/* SECTIONS */
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 19px;
+}
+
+.section-title p {
+    margin-top: 4px;
+
+    color: #888;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* INPUT */
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border-color: #d4af37;
+}
+
+
+/* BUTTONS */
+
+.primary-button,
+.secondary-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 14px;
+
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+.primary-button {
+    background: #d4af37;
+    color: #050505;
+}
+
+.secondary-button {
+    background: #191919;
+    color: #d4af37;
+
+    border: 1px solid #292929;
+}
+
+
+/* ANSWER */
+
+.answer-box {
+    margin-top: 14px;
+
+    padding: 15px;
+
+    background: #151515;
+
+    border-radius: 13px;
+
+    border: 1px solid #292929;
+}
+
+.answer-box span {
+    display: block;
+
+    font-size: 11px;
+    color: #777;
+}
+
+.answer-box strong {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 25px;
+}
+
+
+/* PRODUCTS */
+
+#products {
+    display: grid;
+
+    gap: 9px;
+
+    margin-bottom: 10px;
+}
+
+.product {
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.6fr 1fr;
+
+    gap: 6px;
+}
+
+.product input {
+    margin: 0;
+
+    padding: 10px;
+
+    font-size: 14px;
+}
+
+
+/* SUMMARY */
+
+.sales-summary {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.sales-summary div {
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 13px;
+
+    padding: 13px;
+}
+
+.sales-summary span {
+    display: block;
+
+    font-size: 10px;
+    color: #777;
+}
+
+.sales-summary strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 16px;
+}
+
+.product-amount {
+    grid-column: 1 / -1;
+
+    padding: 8px 10px;
+
+    color: #d4af37;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    text-align: right;
+}
+
+.sales-history {
+    margin-top: 18px;
+}
+
+.sales-history .section-title {
+    margin-bottom: 12px;
+}
+
+.empty-history {
+    padding: 18px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+    border-radius: 13px;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+.sale-record {
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 15px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+}
+
+.sale-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 8px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #292929;
+}
+
+.sale-header strong {
+    color: #d4af37;
+
+    font-size: 14px;
+}
+
+.sale-header span {
+    color: #777;
+
+    font-size: 9px;
+
+    text-align: right;
+}
+
+.sale-items {
+    padding: 10px 0;
+}
+
+.sale-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 6px 0;
+
+    font-size: 12px;
+}
+
+.sale-item span {
+    color: #ddd;
+}
+
+.sale-item strong {
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+
+/* SALE TOTAL */
+
+.sale-total {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #292929;
+}
+
+.sale-total span {
+    color: #888;
+
+    font-size: 11px;
+}
+
+.sale-total strong {
+    color: #d4af37;
+
+    font-size: 17px;
+}
+
+.sale-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.sale-details div {
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.sale-details span {
+    display: block;
+    color: #777;
+    font-size: 9px;
+}
+
+.sale-details strong {
+    display: block;
+    margin-top: 4px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.sale-details div:last-child strong {
+    color: #d4af37;
+}
